@@ -37,7 +37,7 @@ function init() {
   camera.position.set(0, 15, 60);
 
   let loadingSprite = new TextSprite({
-    text: "Loading...",
+    text: "Loading...\n0%",
     alignment: "center",
     fontFamily: "Arial, Helvetica, sans-serif",
     fontSize: 10,
@@ -67,6 +67,10 @@ function init() {
         parseFloat(((xhr.loaded / xhr.total) * 100).toString()).toFixed(2) +
           "% loaded"
       );
+      let loadingText = "Loading...\n" + parseInt(((xhr.loaded / xhr.total) * 100).toString()) + "%"
+      if (loadingText !== loadingSprite.text){
+        loadingSprite.text = loadingText
+      }
     },
     (error) => {
       console.log(error);
