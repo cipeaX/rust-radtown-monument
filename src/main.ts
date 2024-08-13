@@ -13,6 +13,8 @@ let clock: THREE.Clock;
 let ctrlPressed = false;
 let spacePressed = false;
 
+const finishedLoading = new Event("finishedloading");
+
 init();
 animate();
 
@@ -56,6 +58,7 @@ function init() {
     (object) => {
       object.scale.set(0.01, 0.01, 0.01);
       console.log("Ready");
+      document.dispatchEvent(finishedLoading)
       scene.add(object);
       scene.remove(loadingSprite);
     },
@@ -95,8 +98,12 @@ function init() {
       camera.lookAt(new THREE.Vector3(0, 0, 0));
     }
   });
-  document.addEventListener("mousedown", () => {
-    controls.enabled = true;
+  document.addEventListener("finishedloading", () => {
+    setTimeout(()=>{
+      document.addEventListener("mousedown",()=>{
+        controls.enabled = true
+      })
+    },1)
   });
 }
 
