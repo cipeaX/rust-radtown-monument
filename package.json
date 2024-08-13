@@ -1,0 +1,27 @@
+{
+  "name": "basic",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "3.1.8",
+    "vite-plugin-checker": "^0.5.0"
+  },
+  "dependencies": {
+    "@seregpie/three.text-sprite": "^3.2.0",
+    "@types/dat.gui": "^0.7.7",
+    "@types/stats.js": "^0.17.0",
+    "@types/three": "^0.143.2",
+    "dat.gui": "^0.7.9",
+    "gh-pages": "^6.1.1",
+    "stats.js": "^0.17.0",
+    "three": "^0.143.0"
+  }
+}

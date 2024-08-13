@@ -52,7 +52,7 @@ function init() {
 
   const fbxLoader = new FBXLoader();
   fbxLoader.load(
-    "assets/Radtown.fbx",
+    "RadTown.fbx",
     (object) => {
       object.scale.set(0.01, 0.01, 0.01);
       console.log("Ready");
